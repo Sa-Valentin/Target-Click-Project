@@ -3,10 +3,10 @@ body, html{
     padding: 0;
     height: 100%;
     width: 100%;
+    background-color: rgb(199, 199, 199);
 }
 
 #divteste{
-   
     height: 100%;
     width: 100%;
 }
@@ -44,6 +44,16 @@ body, html{
 
 #iniciar:hover{
     background-color: rgb(218, 218, 218);
+}
+
+#pausarjogo {
+    position: fixed;
+    display: flex;
+    top: 7.5%;
+    left: 5px;
+    width: 65px;
+    height: 65px;
+    border-radius: 8%;
 }
 
 #desistir {
