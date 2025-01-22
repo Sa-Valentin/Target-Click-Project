@@ -35,5 +35,5 @@ This project is a learning challenge for me to improve my JavaScript skills. Iâ€
 - Add more sound effects and background music.
 
 ## Contributions
-
+Connect with me on LinkedIn: https://www.linkedin.com/in/samuel-valentin-54762a293/
 Iâ€™m open to tips, insights, and contributions to help me improve this project!
