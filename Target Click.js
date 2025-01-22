@@ -1,8 +1,16 @@
 const IniciarContagem = document.getElementById("iniciar");
 const Desistir = document.getElementById("desistir");
-let Contagem = document.getElementById("tempo");
-let Estado = ""
+const PausarJogo = document.getElementById("pausarjogo");
+const DivTeste = document.getElementById("divteste")
 
+PausarJogo.style.display = "none";
+PausarJogo.disabled = true;
+
+let Contagem = document.getElementById("tempo");
+let LastTarget
+let Estado = ""
+let currentSeconds = parseTime(Contagem.textContent)
+    // utiliza a função "parseTime" para gerar o total de segundos, obtidos do conteúdo de texto que está no "<p>"
 let TimeInterval;
 
 function FormatTime(seconds){
@@ -21,21 +29,68 @@ function parseTime(timeString){
 
     document.body.appendChild(Desistir);
 
-IniciarContagem.addEventListener("click", function(){
+    function TargetButton(){
+        const Target = document.createElement("input");
+        Target.type = "button"
+        Target.id = "target"
+        Target.style.position = "fixed";
+        Target.style.display = "flex";
+        Target.style.width = "65px";
+        Target.style.height = "65px";
+        Target.style.backgroundColor = "rgb(255, 102, 0)";
+        Target.style.borderRadius = "50%";
+        
+        const marginTop = 120; // Altura do cronômetro e barra preta.
+        const marginLeft = 160;
+    
+        const MaxWidth = window.innerWidth - 65 - marginLeft;; //Para limitar o Target aos limites da tela em exibição.
+        const MaxHeight = window.innerHeight - 65 - marginTop; //Para limitar a altura máxima que o target pode ter até chegar ao limite da tela
+    
+        const RandomLeft = marginLeft + Math.random() * MaxWidth;
+        const RandomTop = marginTop + Math.random() * MaxHeight;
+    
+        Target.style.left = `${RandomLeft}px`
+        Target.style.top = `${RandomTop}px`
+    
+        document.body.appendChild(Target);
 
+        LastTarget = Target;
+
+        Target.addEventListener("click", function() {
+            Target.remove(); // Remove o botão clicado.
+            TargetButton(); // Cria um novo botão Target.
+            currentSeconds += 2;
+        Contagem.textContent = FormatTime(currentSeconds);
+        });
+        Estado = "jogoIniciado"
+
+        DivTeste.addEventListener("click", function(event){ //Cliques na div decrementam o tempo
+            
+            if(LastTarget && !LastTarget.contains(event.target)){
+                
+                if (currentSeconds <= 0){
+                    currentSeconds = 0
+                }else {
+                    currentSeconds -= 5;
+                }
+                Contagem.textContent = FormatTime(currentSeconds);
+            }
+        })
+        
+       
+    }
+        
+
+IniciarContagem.addEventListener("click", function(){
     //Ao clicar no botão "iniciar", o input "PausarJogo" é criado e estilizado assim como o input "Desistir"
-    let currentSeconds = parseTime(Contagem.textContent)
-    // utiliza a função "parseTime" para gerar o total de segundos, obtidos do conteúdo de texto que está no "<p>"
-    const PausarJogo = document.createElement("input");
-    PausarJogo.type = "button"
-    PausarJogo.id = "pausarjogo"
-    PausarJogo.style.position = "fixed";
-    PausarJogo.style.display = "flex";
-    PausarJogo.style.top = "7.5%";
-    PausarJogo.style.left = "5px";
-    PausarJogo.style.width = "65px";
-    PausarJogo.style.height = "65px";
-    PausarJogo.style.borderRadius = "8%";
+
+    if (Estado === ""){
+        //Verifica se o estado é o atribuido inicialmente, para então criar o botão Target, que também atribui ao estado o valor "iniciado", para que ao pausar e continuar o jogo, o botão Target não seja criado novamente.
+        TargetButton()
+        currentSeconds += 5;
+        Contagem.textContent = FormatTime(currentSeconds);
+    }
+    
 
     if (Estado === "pausado"){
         Desistir.style.display = "none";
@@ -51,6 +106,9 @@ IniciarContagem.addEventListener("click", function(){
         PausarJogo.style.backgroundColor = ""; // Volta ao estilo original
     });
     
+    PausarJogo.style.display = "block";
+    PausarJogo.disabled = false;
+    
     PausarJogo.addEventListener("click", function(){
     clearInterval(timerInterval);
     timerInterval = null
@@ -64,7 +122,8 @@ IniciarContagem.addEventListener("click", function(){
     Desistir.style.display = "block";
     Desistir.disabled = false;
     
-    PausarJogo.remove();
+    PausarJogo.style.display = "none";
+    PausarJogo.disabled = true;
 });
     
     document.body.appendChild(PausarJogo)
@@ -92,7 +151,6 @@ IniciarContagem.addEventListener("click", function(){
         if (Pause){
             Pause.remove()
         }
-        currentSeconds = 300;
 
         IniciarContagem.style.display = "block";
         IniciarContagem.disabled = false;
