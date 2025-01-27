@@ -40,5 +40,5 @@ A versão atual trouxe mudanças significativas para aprimorar a jogabilidade e 
 ---
 
 ## Contribuições
-Conecte-se comigo no Linkedin: https://www.linkedin.com/in/samuel-valentin-54762a293/
+Conecte-se comigo no [LinkedIn](https://www.linkedin.com/in/samuel-valentin-54762a293/)
 Aceito dicas, sugestões e contribuições para melhorar o projeto!
