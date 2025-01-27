@@ -2,44 +2,42 @@
 
 ## Descrição
 
-O **Target Click** é um jogo simples para a web onde o jogador deve clicar nos blocos aleatórios que aparecem na tela antes que o tempo acabe. O objetivo é testar a velocidade de reação, e o jogo fica progressivamente mais difícil a cada nível. Na versão atual, o jogador deve clicar em um "Target" que muda de posição constantemente. Ao acertar o "Target", o jogador ganha tempo; ao errar, perde tempo.
+O **Target Click** é um jogo simples para a web, projetado para testar a velocidade de reação do jogador. O objetivo é clicar nos blocos (Targets) aleatórios que aparecem na tela antes que o tempo acabe. A dificuldade aumenta progressivamente, desafiando o jogador com novas dinâmicas e desafios.
 
-## Objetivos do Projeto
+## **Objetivos do Projeto**  
+Este projeto foi iniciado como um desafio de aprendizado em JavaScript, com o objetivo de desenvolver habilidades em lógica de programação e criar uma experiência de jogo interativa. O foco inicial era implementar a lógica básica do jogo até o dia 6 de janeiro, com o progresso direcionado para funcionalidades mais avançadas e polimento nas versões seguintes.  
 
-Comecei a programar esse projeto há dois dias e vou focar na lógica básica do jogo até o dia 6, quando espero ter construido o básico do jogo. O objetivo atual é fazer os blocos aparecerem e desaparecerem, e conforme o projeto avança, vou adicionar mais recursos, como:
-- Níveis adicionais de dificuldade
-- Animações satisfatórias
-- Melhorias no design
-- Música e efeitos sonoros
+Os objetivos principais incluem:  
+- Adicionar mais níveis de dificuldade.  
+- Criar animações dinâmicas e satisfatórias.  
+- Melhorar o design e a experiência do usuário (UI/UX).  
+- Implementar música e efeitos sonoros.  
 
-Este projeto é um desafio de aprendizado para melhorar minhas habilidades em JavaScript.
+---
 
-## Tecnologias Utilizadas
+## **Tecnologias Utilizadas**  
+- **JavaScript**  
+- **HTML**  
+- **CSS**  
 
-- JavaScript
-- HTML
-- CSS
+---
 
-## Como Jogar
+## **Como Jogar**  
+1. Clique nos blocos (Targets) que aparecem aleatoriamente na tela.  
+2. Evite clicar fora do Target, pois isso resultará em perda de tempo.  
+3. Responda rapidamente: os Targets agora desaparecem após um tempo, penalizando o jogador caso não sejam clicados.  
+4. A cada Target clicado corretamente, o cronômetro ganha tempo adicional.  
 
-1. Clique nos blocos aleatórios que aparecem na tela.
-2. Evite errar antes que o tempo acabe.
-3. Quando você clicar no "Target", ganhará tempo. Se errar, perderá tempo.
+---
 
-## Novidades na Versão Atual
+## **Novidades na Versão Atual (v1.2.0)**  
+A versão atual trouxe mudanças significativas para aprimorar a jogabilidade e aumentar a diversão:  
+- **Dinâmica de Temporizadores:** Agora, os Targets desaparecem após alguns segundos caso não sejam clicados, penalizando o jogador e adicionando uma camada de dificuldade.  
+- **Aprimoramento Progressivo:** Mais Targets podem aparecer à medida que o jogo avança, desafiando o jogador a responder rapidamente.  
+- **Melhoria nos Botões:** Os botões básicos foram ajustados para funcionar de forma mais fluida, oferecendo melhor interatividade e estabilidade.  
+- **Novos ajustes de dificuldade:** Com o progresso no jogo, o tamanho dos Targets e as penalidades tornam o desafio mais intenso.  
 
-- **Melhorias na Jogabilidade**: A lógica de tempo foi aprimorada para ser mais desafiadora e interativa, pois:
-
-- **Botão Target**: O jogo agora tem um botão "Target" que se move aleatoriamente pela tela. Ao ser clicado, ele adiciona tempo ao cronômetro do jogador.
-- **Perda de Tempo**: Se o jogador clicar em qualquer parte da tela que não seja o "Target" ou o botão de pause, ele perde tempo.
-
-
-## Melhorias Futuras
-
-- Implementar mecânicas de jogo mais complexas.
-- Adicionar animações dinâmicas para os blocos e o tempo.
-- Melhorar o design da interface (UI/UX).
-- Adicionar mais efeitos sonoros e música de fundo.
+---
 
 ## Contribuições
 Conecte-se comigo no Linkedin: https://www.linkedin.com/in/samuel-valentin-54762a293/
