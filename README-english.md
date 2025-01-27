@@ -1,45 +1,45 @@
 # Target Click Game
 
-## Description
+## **Description**  
+Target Click is a simple web-based game designed to test the player's reaction speed. The objective is to click on random blocks (Targets) that appear on the screen before time runs out. The difficulty increases progressively, challenging the player with new dynamics and mechanics.
 
-**Target Click** is a simple web game where the player must click on the random blocks that appear on the screen before time runs out. The goal is to test reaction speed, and the game becomes progressively harder with each level. In the current version, the player must click on a "Target" that constantly changes its position. Hitting the "Target" adds time to the player’s clock, while missing it causes time to be lost.
+---
 
-## Project Goals
+## **Project Goals**  
+This project was started as a learning challenge in JavaScript, with the aim of developing programming logic skills and creating an interactive gaming experience. The initial focus was to implement the basic logic of the game by January 6th, with progress geared towards more advanced features and polishing in later versions.  
 
-I started programming this project two days ago and will focus on the basic game logic until the 6th, when I expect to have the basic game built. The current goal is to make the blocks appear and disappear, and as the project progresses, I will add more features such as:
-- Additional levels of difficulty
-- Satisfying animations
-- Design improvements
-- Music and sound effects
+Key objectives include:  
+- Adding more levels of difficulty.  
+- Creating dynamic and satisfying animations.  
+- Improving design and user experience (UI/UX).  
+- Implementing music and sound effects.  
 
-This project is a learning challenge to improve my JavaScript skills.
+---
 
-## Technologies Used
+## **Technologies Used**  
+- **JavaScript**  
+- **HTML**  
+- **CSS**  
 
-- JavaScript
-- HTML
-- CSS
+---
 
-## How to Play
+## **How to Play**  
+1. Click on the blocks (Targets) that appear randomly on the screen.  
+2. Avoid clicking outside the Target, as this will result in a time penalty.  
+3. React quickly: Targets now disappear after a few seconds, penalizing the player if they are not clicked.  
+4. For each Target successfully clicked, additional time is added to the timer.  
 
-1. Click on the random blocks that appear on the screen.
-2. Avoid missing them before the timer runs out.
-3. When you click on the "Target", you gain time. If you miss, you lose time.
+---
 
-## New Features in the Current Version
+## **What's New in the Current Version (v1.2.0)**  
+The current version introduces significant changes to improve gameplay and enhance the overall fun:  
 
-- **Gameplay Improvements**: The time logic has been improved to be more challenging and interactive, because:
-  
-  - **Target Button**: The game now has a "Target" button that moves randomly across the screen. Clicking it adds time to the player’s timer.
-  - **Time Loss**: If the player clicks anywhere on the screen that is not the "Target" or the pause button, they lose time.
+- **Timer Dynamics:** Targets now disappear after a few seconds if not clicked, penalizing the player and adding a layer of difficulty.  
+- **Progressive Challenge:** More Targets can appear as the game progresses, challenging the player to react faster.  
+- **Improved Buttons:** Basic buttons have been adjusted for smoother functionality, offering better interactivity and stability.  
+- **New Difficulty Adjustments:** As the game progresses, Target sizes and penalties make the challenge more intense.  
 
-## Future Improvements
+---
 
-- Implement more complex game mechanics.
-- Add dynamic animations for the blocks and the timer.
-- Improve the interface design (UI/UX).
-- Add more sound effects and background music.
-
-## Contributions
-Connect with me on LinkedIn: https://www.linkedin.com/in/samuel-valentin-54762a293/
-I welcome tips, suggestions, and contributions to improve the project!
+## **Contributions**  
+Connect with me on [LinkedIn](https://www.linkedin.com/in/samuel-valentin-54762a293/). Feedback, suggestions, and contributions are welcome to further improve the Target Click game.
