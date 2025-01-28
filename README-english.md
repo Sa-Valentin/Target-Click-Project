@@ -43,3 +43,11 @@ The current version introduces significant changes to improve gameplay and enhan
 
 ## **Contributions**  
 Connect with me on [LinkedIn](https://www.linkedin.com/in/samuel-valentin-54762a293/). Feedback, suggestions, and contributions are welcome to further improve the Target Click game.
+
+# Credits
+
+This project uses icons provided by Flaticon.
+
+Pause icon by [Freepik](https://www.flaticon.com/authors/freepik) - Available on [Flaticon](https://www.flaticon.com/free-icon/pause_10279029?term=pause+button&page=1&position=35&origin=tag&related_id=10279029).
+
+License: [Flaticon License](https://www.flaticon.com/legal)

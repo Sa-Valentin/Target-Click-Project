@@ -42,3 +42,11 @@ A versão atual trouxe mudanças significativas para aprimorar a jogabilidade e 
 ## Contribuições
 Conecte-se comigo no [LinkedIn](https://www.linkedin.com/in/samuel-valentin-54762a293/)
 Aceito dicas, sugestões e contribuições para melhorar o projeto!
+
+# Créditos
+
+Este projeto utiliza de ícones fornecidos pelo Flaticon.
+
+Ícone de Pausa por [Freepik](https://www.flaticon.com/br/autores/freepik) - Disponível em [Flaticon](https://www.flaticon.com/br/icone-gratis/pausa_10279029?term=bot%C3%A3o+de+pausa&page=1&position=35&origin=tag&related_id=10279029).
+
+Licença: [Flaticon License](https://www.flaticon.com/legal)
