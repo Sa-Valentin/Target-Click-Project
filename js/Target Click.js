@@ -3,6 +3,7 @@ const Desistir = document.getElementById("desistir");
 const PausarJogo = document.getElementById("pausarjogo");
 const DivButtons = document.getElementById("DivButtons");
 
+let FireGif = document.getElementById("gifFire");
 let targetTimers = [];
 let Penalidade = 5;
 let Contagem = document.getElementById("tempo");
@@ -13,12 +14,13 @@ let timerInterval;
 let targetsClicked = 0;
 let targetSize = 80;
 let ComboScreen = document.getElementById("comboScreen");
+
 let Combo = 0;
 
-PausarJogo.style.display = "none";
-PausarJogo.disabled = true;
-
-
+PausarJogo.style.visibility = "hidden";
+FireGif.style.visibility = "hidden";
+Contagem.style.visibility = "hidden";
+Desistir.style.visibility = "hidden";
 
 function FormatTime(seconds){
     const minutes = Math.floor(seconds / 60).toString().padStart(2, "0");
@@ -27,15 +29,12 @@ function FormatTime(seconds){
     return `${minutes}:${secs}`; 
 }
 
-
-
 function parseTime(timeString){
     const [minutes, seconds] = timeString.split(":").map(Number);
     //array com os valores de horas, minutos e segundos, divide os valores e os converte para Number.
 
     return minutes * 60 + seconds;
 }
-    document.body.appendChild(Desistir);
 
     function TargetButton(){
         const Target = document.createElement("input");
@@ -72,24 +71,21 @@ function parseTime(timeString){
                 Target.remove();
                 TargetButton();
                 currentSeconds -= Penalidade;
-
-                if (currentSeconds < 0){
-                    currentSeconds = 0;
-                    Contagem.textContent = FormatTime(currentSeconds);
-                }
+                Contagem.textContent = FormatTime(currentSeconds);
+                
+            }if (currentSeconds <= 0){
+                currentSeconds = 0;
+                Contagem.textContent = FormatTime(currentSeconds);
             }
           }, 4000);
 
           targetTimers.push(timeoutId);
 
         Target.addEventListener("click", function() {
-        if (Estado === "pausado"){
+            if (Estado === "jogoIniciado"){
+                Target.remove(); // Remove o botão clicado.
+                TargetButton(); // Cria um novo botão Target.
 
-            console.log("pausado");
-
-        }else if (Estado === "jogoIniciado"){
-            Target.remove(); // Remove o botão clicado.
-            TargetButton(); // Cria um novo botão Target.
                 currentSeconds += 5;
                 Contagem.textContent = FormatTime(currentSeconds);
 
@@ -97,6 +93,7 @@ function parseTime(timeString){
                 targetsClicked++;
                     console.log(`${targetsClicked} targets`);
                     ComboScreen.textContent = `${Combo}`;
+        
         }
         
         if (targetsClicked === 10 || targetsClicked === 40){ //Construção do desafio progressivo
@@ -113,30 +110,47 @@ function parseTime(timeString){
 
         if (targetsClicked === 150){
             targetSize = 30;
+
+        }
+
+        if (Combo >= 15 && Combo < 50){ //começo do efeito visual de progressão
+            ComboScreen.style.color = "rgb(240, 240, 0)";
+        }else if (Combo >= 50 && Combo < 100){
+            FireGif.style.visibility = "visible";
+            FireGif.style.backgroundImage = "url('./assets/images/fogo.gif')";
+            ComboScreen.style.color = "orange";
+        }else if (Combo >= 100 && Combo < 1000){
+            FireGif.style.backgroundImage = "url('./assets/images/fogo_2x_speed.gif')";
+            ComboScreen.style.color = "red";
+        }else if (Combo >= 1000){
+            ComboScreen.style.color = "purple";
         }
 
         
         });
         
-        
-        
-       
     }
 
     DivButtons.addEventListener("click", function(event){ //Cliques na div decrementam o tempo
-            
+        ComboScreen.style.color = "black";
+        FireGif.style.visibility = "hidden";
         if(LastTarget && !LastTarget.contains(event.target)){
             
             if (currentSeconds <= 0){
                 currentSeconds = 0;
+                ComboScreen.style.backgroundImage = null;
+                Combo = 0;
+                ComboScreen.style.color = "black";
             }else if (Estado === "jogoIniciado") {
                 currentSeconds -= Penalidade;
                 Combo = 0;
                 ComboScreen.textContent = null
                 console.log(currentSeconds)
+                ComboScreen.style.backgroundImage = null;
             }
             Contagem.textContent = FormatTime(currentSeconds);
         }
+        
     })
         
 
@@ -149,10 +163,17 @@ IniciarContagem.addEventListener("click", function(){
         Estado = "jogoIniciado"
     }
     
+    Desistir.style.visibility = "hidden";
+    PausarJogo.style.visibility = "visible";
+    Contagem.style.visibility = "visible";
+
+    AllTargets.forEach(target => {
+        if (document.body.contains(target)) {
+            target.style.visibility = "visible";
+        }
+      });
 
     if (Estado === "pausado"){
-        Desistir.style.display = "none";
-        Desistir.disabled = true;
         Estado = "jogoIniciado"
     }
     PausarJogo.style.transition = "width 0.3s ease, height 0.3s ease";
@@ -171,64 +192,65 @@ IniciarContagem.addEventListener("click", function(){
     PausarJogo.style.backgroundImage = "url('assets/images/PauseImage.png')";
     PausarJogo.style.backgroundSize = "cover";
     PausarJogo.style.backgroundPosition = "center";
-    PausarJogo.style.display = "block";
-    PausarJogo.disabled = false;
+    PausarJogo.style.visibility = "visible";
     
     PausarJogo.addEventListener("click", function(){
-    clearInterval(timerInterval);
-    timerInterval = null
-    Estado = "pausado" 
+        clearInterval(timerInterval);
+        timerInterval = null
+        Estado = "pausado" 
 
-    IniciarContagem.style.left = "45%";
-    IniciarContagem.style.display = "block";
-    IniciarContagem.disabled = false;
-    
+        Combo = 0;
+        ComboScreen.textContent = null
 
-    Desistir.style.display = "block";
-    Desistir.disabled = false;
-    
-    PausarJogo.style.display = "none";
-    PausarJogo.disabled = true;
+        IniciarContagem.style.left = "45%";
+        IniciarContagem.style.visibility = "visible";
+
+        Desistir.style.visibility = "visible";
+        PausarJogo.style.visibility = "hidden";
+
+    AllTargets.forEach(target => {
+        if (document.body.contains(target)) {
+            target.style.visibility = "hidden";
+        }
+      });
 });
-    
-    
 
     timerInterval = setInterval(() => {
-        currentSeconds--;
-        Contagem.textContent = FormatTime(currentSeconds); 
-       
         if (currentSeconds <= 0) {
             clearInterval(timerInterval);
             timerInterval = null;
-            
+            ComboScreen.style.color = "black";
+            ComboScreen.textContent = null
+            FireGif.style.visibility = "hidden";
+
             AllTargets.forEach(target => {
-                if (document.body.contains(target)) {
                   target.remove();
-                }
+                
               });
               
               AllTargets = []; // Limpa o array
-            targetTimers.forEach(clearTimeout);
+            targetTimers.forEach(clearInterval);
             targetTimers = [];
         }
+
+        currentSeconds--;
+        Contagem.textContent = FormatTime(currentSeconds); 
     }, 1000);
 
-    IniciarContagem.style.display = "none";
-    IniciarContagem.disabled = true;
+        IniciarContagem.style.visibility = "hidden";
 });
 
     function DesistirButton(){
-            Desistir.style.display = "none";
-            Desistir.disabled = true;
+            Desistir.style.visibility = "hidden";
             Estado = ""
             clearInterval(timerInterval);
             timerInterval = null
-        
+            Combo = 0;
+            ComboScreen.style.color = "black";
+            ComboScreen.textContent = null
 
         Contagem.textContent = "02:00";
             currentSeconds = 120;
-            PausarJogo.style.display = "none";
-            PausarJogo.disabled = true;
             targetsClicked = 0;
             targetSize = 80;
             Penalidade = 5;
@@ -240,7 +262,7 @@ IniciarContagem.addEventListener("click", function(){
               });
 
               AllTargets = []; // Limpa o array
-            targetTimers.forEach(clearTimeout);
+            targetTimers.forEach(clearInterval);
             targetTimers = [];
         
 
@@ -249,19 +271,17 @@ IniciarContagem.addEventListener("click", function(){
         IniciarContagem.style.left = "48vw";
     }
 
-    
     Desistir.addEventListener("click", function(){
         DesistirButton()
     })
 
-
-window.onload = function () {
+    window.onload = function () {
     // Espera 3 segundos (duração da animação) para exibir o conteúdo
-    setTimeout(function () {
+        setTimeout(function () {
         // Oculta a tela de carregamento
-        document.querySelector('#loadingScreen').style.display = 'none';
+            document.querySelector('#loadingScreen').style.display = 'none';
         
         // Exibe o conteúdo real da página
-        document.querySelector('.content').style.display = 'block';
-    }, 300);
+            document.querySelector('.content').style.display = 'block';
+    }, 2300);
 };
