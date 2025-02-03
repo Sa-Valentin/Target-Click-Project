@@ -5,7 +5,8 @@
 **Target Click** is a simple web game designed to test the player's reaction speed. The goal is to click on the random blocks (Targets) that appear on the screen before time runs out. The difficulty increases progressively, challenging the player with new dynamics and challenges.
 
 ## **Project Goals**  
-This project was started as a learning challenge in JavaScript, aiming to develop programming logic skills and create an interactive gaming experience. The initial focus was on implementing the basic game logic by January 6th, with progress directed towards more advanced features and polish in subsequent versions.  
+This project was started as a learning challenge in JavaScript, aiming to develop programming logic skills and create an interactive gaming experience. The initial focus was on implementing the basic game logic by 
+February 6th, with progress directed towards more advanced features and polish in subsequent versions.  
 
 The main objectives include:  
 - Add more difficulty levels.  
