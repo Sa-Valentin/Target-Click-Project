@@ -30,24 +30,27 @@ Os objetivos principais incluem:
 
 ---
 
-## **Novidades na Versão Atual (v1.2.0)**  
-A versão atual trouxe mudanças significativas para aprimorar a jogabilidade e aumentar a diversão:  
-- **Dinâmica de Temporizadores:** Agora, os Targets desaparecem após alguns segundos caso não sejam clicados, penalizando o jogador e adicionando uma camada de dificuldade.  
-- **Aprimoramento Progressivo:** Mais Targets podem aparecer à medida que o jogo avança, desafiando o jogador a responder rapidamente.  
-- **Melhoria nos Botões:** Os botões básicos foram ajustados para funcionar de forma mais fluida, oferecendo melhor interatividade e estabilidade.  
-- **Novos ajustes de dificuldade:** Com o progresso no jogo, o tamanho dos Targets e as penalidades tornam o desafio mais intenso.  
+## **Novidades na Versão Atual (v1.3.1)**  
+A versão mais recente traz novas melhorias e ajustes para uma experiência de jogo ainda mais dinâmica:  
+- **Botão de Recomeçar Estilizado:**  
+  Agora, quando o tempo chega a 0, o botão de recomeçar surge automaticamente com um design renovado, facilitando a retomada do jogo.  
+- **Elementos Não Selecionáveis:**  
+  O título e as informações na tela (tempo e combo) não são mais selecionáveis pelo mouse, eliminando a marcação em azul que ocorria durante a gameplay.  
+- **Bônus de Tempo por Combo:**  
+  A medida que o combo cresce, o jogador passa a receber bônus de tempo a cada acerto, tornando a jogabilidade mais dinâmica.  
+- **Ajuste Geral no Progresso de Desafio:**  
+  Refinamentos no avanço do desafio tornam o jogo mais equilibrado e desafiador.
 
 ---
 
-## Contribuições
-Conecte-se comigo no [LinkedIn](https://www.linkedin.com/in/samuel-valentin-54762a293/)
+## Contribuições  
+Conecte-se comigo no [LinkedIn](https://www.linkedin.com/in/samuel-valentin-54762a293/).  
 Aceito dicas, sugestões e contribuições para melhorar o projeto!
 
 # Créditos
 
-Este projeto utiliza de ícones fornecidos pelo Flaticon.
+Este projeto utiliza ícones fornecidos pelo Flaticon.
 
 Ícone de Pausa por [Freepik](https://www.flaticon.com/br/autores/freepik) - Disponível em [Flaticon](https://www.flaticon.com/br/icone-gratis/pausa_10279029?term=bot%C3%A3o+de+pausa&page=1&position=35&origin=tag&related_id=10279029).
-Ícone de Reinicio criado por [SumberRejeki](https://www.flaticon.com/br/icone-gratis/reinicio_4400500?term=reinicio&page=1&position=3&origin=search&related_id=4400500)
 
 Licença: [Flaticon License](https://www.flaticon.com/legal)
