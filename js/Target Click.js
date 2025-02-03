@@ -14,6 +14,7 @@ let timerInterval;
 let targetsClicked = 0;
 let targetSize = 80;
 let ComboScreen = document.getElementById("comboScreen");
+let Bonus = 5
 
 let Combo = 0;
 
@@ -86,7 +87,7 @@ function parseTime(timeString){
                 Target.remove(); // Remove o botão clicado.
                 TargetButton(); // Cria um novo botão Target.
 
-                currentSeconds += 5;
+                currentSeconds += Bonus;
                 Contagem.textContent = FormatTime(currentSeconds);
 
                 Combo++;
@@ -96,34 +97,37 @@ function parseTime(timeString){
         
         }
         
-        if (targetsClicked === 10 || targetsClicked === 40){ //Construção do desafio progressivo
+        if (targetsClicked === 15 || targetsClicked === 50){ //Construção do desafio progressivo
             TargetButton();
             targetSize = 65;
             Penalidade = 10;
-        }
-        
-        if (targetsClicked === 80){
+        } else if (targetsClicked === 100){
             targetSize = 50;
             TargetButton();
-            Penalidade = 20;
-        }
-
-        if (targetsClicked === 150){
+            Penalidade = 15;
+        } else if (targetsClicked === 150){
             targetSize = 30;
-
+            Penalidade = 50
+        } else if (targetsClicked === 1000){
+            Penalidade = 150
         }
 
         if (Combo >= 15 && Combo < 50){ //começo do efeito visual de progressão
             ComboScreen.style.color = "rgb(240, 240, 0)";
+            Bonus = 8;
         }else if (Combo >= 50 && Combo < 100){
             FireGif.style.visibility = "visible";
             FireGif.style.backgroundImage = "url('./assets/images/fogo.gif')";
             ComboScreen.style.color = "orange";
+            Bonus = 12;
         }else if (Combo >= 100 && Combo < 1000){
             FireGif.style.backgroundImage = "url('./assets/images/fogo_2x_speed.gif')";
             ComboScreen.style.color = "red";
         }else if (Combo >= 1000){
             ComboScreen.style.color = "purple";
+            Bonus = 50;
+        } else if (Combo === 0){
+            Bonus = 5;
         }
 
         
@@ -162,6 +166,7 @@ IniciarContagem.addEventListener("click", function(){
         Contagem.textContent = FormatTime(currentSeconds);
         Estado = "jogoIniciado"
     }
+    IniciarContagem.style.backgroundImage = "url('assets/images/Play.png')";
     
     Desistir.style.visibility = "hidden";
     PausarJogo.style.visibility = "visible";
@@ -221,8 +226,12 @@ IniciarContagem.addEventListener("click", function(){
             timerInterval = null;
             ComboScreen.style.color = "black";
             ComboScreen.textContent = null
+            Combo = 0
+            Penalidade = 5
+            Bonus = 5
             FireGif.style.visibility = "hidden";
-
+            DesistirButton();
+            IniciarContagem.style.backgroundImage = "url('assets/images/reinicio.png')";
             AllTargets.forEach(target => {
                   target.remove();
                 
@@ -231,6 +240,8 @@ IniciarContagem.addEventListener("click", function(){
               AllTargets = []; // Limpa o array
             targetTimers.forEach(clearInterval);
             targetTimers = [];
+
+
         }
 
         currentSeconds--;
@@ -242,12 +253,14 @@ IniciarContagem.addEventListener("click", function(){
 
     function DesistirButton(){
             Desistir.style.visibility = "hidden";
+
             Estado = ""
             clearInterval(timerInterval);
             timerInterval = null
             Combo = 0;
             ComboScreen.style.color = "black";
             ComboScreen.textContent = null
+            Contagem.style.visibility = "hidden";
 
         Contagem.textContent = "02:00";
             currentSeconds = 120;
@@ -266,8 +279,7 @@ IniciarContagem.addEventListener("click", function(){
             targetTimers = [];
         
 
-        IniciarContagem.style.display = "block";
-        IniciarContagem.disabled = false;
+            IniciarContagem.style.visibility = "visible";
         IniciarContagem.style.left = "48vw";
     }
 
