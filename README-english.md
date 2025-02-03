@@ -1,18 +1,17 @@
 # Target Click Game
 
-## **Description**  
-Target Click is a simple web-based game designed to test the player's reaction speed. The objective is to click on random blocks (Targets) that appear on the screen before time runs out. The difficulty increases progressively, challenging the player with new dynamics and mechanics.
+## Description
 
----
+**Target Click** is a simple web game designed to test the player's reaction speed. The goal is to click on the random blocks (Targets) that appear on the screen before time runs out. The difficulty increases progressively, challenging the player with new dynamics and challenges.
 
 ## **Project Goals**  
-This project was started as a learning challenge in JavaScript, with the aim of developing programming logic skills and creating an interactive gaming experience. The initial focus was to implement the basic logic of the game by January 6th, with progress geared towards more advanced features and polishing in later versions.  
+This project was started as a learning challenge in JavaScript, aiming to develop programming logic skills and create an interactive gaming experience. The initial focus was on implementing the basic game logic by January 6th, with progress directed towards more advanced features and polish in subsequent versions.  
 
-Key objectives include:  
-- Adding more levels of difficulty.  
-- Creating dynamic and satisfying animations.  
-- Improving design and user experience (UI/UX).  
-- Implementing music and sound effects.  
+The main objectives include:  
+- Add more difficulty levels.  
+- Create dynamic and satisfying animations.  
+- Improve the design and user experience (UI/UX).  
+- Implement music and sound effects.  
 
 ---
 
@@ -24,30 +23,34 @@ Key objectives include:
 ---
 
 ## **How to Play**  
-1. Click on the blocks (Targets) that appear randomly on the screen.  
-2. Avoid clicking outside the Target, as this will result in a time penalty.  
-3. React quickly: Targets now disappear after a few seconds, penalizing the player if they are not clicked.  
-4. For each Target successfully clicked, additional time is added to the timer.  
+1. Click on the random blocks (Targets) that appear on the screen.  
+2. Avoid clicking outside the Target, as it will result in a loss of time.  
+3. React quickly: the Targets now disappear after a few seconds if not clicked, penalizing the player.  
+4. For every correct Target clicked, the timer gains additional time.  
 
 ---
 
-## **What's New in the Current Version (v1.2.0)**  
-The current version introduces significant changes to improve gameplay and enhance the overall fun:  
-
-- **Timer Dynamics:** Targets now disappear after a few seconds if not clicked, penalizing the player and adding a layer of difficulty.  
-- **Progressive Challenge:** More Targets can appear as the game progresses, challenging the player to react faster.  
-- **Improved Buttons:** Basic buttons have been adjusted for smoother functionality, offering better interactivity and stability.  
-- **New Difficulty Adjustments:** As the game progresses, Target sizes and penalties make the challenge more intense.  
+## **What's New in the Current Version (v1.3.1)**  
+The latest version brings new improvements and adjustments for an even more dynamic gaming experience:  
+- **Styled Restart Button:**  
+  Now, when time runs out, the restart button automatically appears with a refreshed design, making it easier to restart the game.  
+- **Non-Selectable Elements:**  
+  The title and on-screen information (time and combo) are no longer selectable by the mouse, eliminating the blue highlighting that occurred during gameplay.  
+- **Time Bonus for Combo:**  
+  As the combo grows, the player now receives time bonuses for each correct hit, making the gameplay more dynamic.  
+- **General Challenge Progress Adjustment:**  
+  Refinements in challenge progression make the game more balanced and challenging.
 
 ---
 
-## **Contributions**  
-Connect with me on [LinkedIn](https://www.linkedin.com/in/samuel-valentin-54762a293/). Feedback, suggestions, and contributions are welcome to further improve the Target Click game.
+## Contributions  
+Connect with me on [LinkedIn](https://www.linkedin.com/in/samuel-valentin-54762a293/).  
+I welcome tips, suggestions, and contributions to improve the project!
 
 # Credits
 
 This project uses icons provided by Flaticon.
 
-Pause icon by [Freepik](https://www.flaticon.com/authors/freepik) - Available on [Flaticon](https://www.flaticon.com/free-icon/pause_10279029?term=pause+button&page=1&position=35&origin=tag&related_id=10279029).
+Pause Icon by [Freepik](https://www.flaticon.com/br/autores/freepik) - Available on [Flaticon](https://www.flaticon.com/br/icone-gratis/pausa_10279029?term=bot%C3%A3o+de+pausa&page=1&position=35&origin=tag&related_id=10279029).
 
 License: [Flaticon License](https://www.flaticon.com/legal)
