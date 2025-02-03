@@ -5,7 +5,7 @@
 O **Target Click** é um jogo simples para a web, projetado para testar a velocidade de reação do jogador. O objetivo é clicar nos blocos (Targets) aleatórios que aparecem na tela antes que o tempo acabe. A dificuldade aumenta progressivamente, desafiando o jogador com novas dinâmicas e desafios.
 
 ## **Objetivos do Projeto**  
-Este projeto foi iniciado como um desafio de aprendizado em JavaScript, com o objetivo de desenvolver habilidades em lógica de programação e criar uma experiência de jogo interativa. O foco inicial era implementar a lógica básica do jogo até o dia 6 de janeiro, com o progresso direcionado para funcionalidades mais avançadas e polimento nas versões seguintes.  
+Este projeto foi iniciado como um desafio de aprendizado em JavaScript, com o objetivo de desenvolver habilidades em lógica de programação e criar uma experiência de jogo interativa. O foco inicial era implementar a lógica básica do jogo até o dia 6 de Fevereiro, e isso foi concluido em 4 dias, portanto pretendo evoluir o projeto por tempo indeterminado, pois há muito o que fazer.  
 
 Os objetivos principais incluem:  
 - Adicionar mais níveis de dificuldade.  
