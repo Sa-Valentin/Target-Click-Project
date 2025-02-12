@@ -1,0 +1,668 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+#DivButtons {
+    height: 100%;
+    width: 100%;
+}
+
+#comboScreen {
+    display: flex;
+    position: fixed;
+    top: 75vh; /* Ajuste a posição em relação à altura da tela */
+    left: 92%;
+    font-size: 3vw; /* Ajusta o tamanho da fonte de acordo com a largura da tela */
+    transform: translateX(-50%);
+    width: 5vw;
+    height: 5vw;
+    user-select: none;
+}
+#gifFire {
+    display: block;
+    position: fixed;
+    font-size: 3vw;
+    bottom: 7vh;
+    left: 94%;
+    width: 5vw;
+    height: 5vw;
+    background-image: url("../assets/images/fogo.gif");
+    background-size: cover;
+    background-position: center;
+    user-select: none;
+}
+#gifFire::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#tempo {
+    position: absolute;
+    font-size: 3vw;
+    margin: 40px;
+    top: 55%;
+    left: 45vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    background-color: rgb(0, 0, 0);
+    background-size: 100% 100%;
+    background-clip: border-box;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+}
+
+#iniciar {
+    position: fixed;
+    display: flex;
+    border-radius: 12%;
+    top: 45%;
+    left: 48%;
+    width: 10vw; /* Ajuste proporcional à largura */
+    height: 10vw;
+    max-width: 90px; /* Limita o tamanho máximo */
+    max-height: 90px;
+    background-image: url('../assets/images/Play.png');
+    background-size: cover;
+    background-position: center;
+   
+}
+
+#iniciar[disabled] {
+    opacity: 0;
+    pointer-events: none;
+}
+#soundOnOrOFF{
+    position: absolute;
+    display: flex;
+    top: 90%;
+    background-color: rgb(194, 194, 194);
+    border-radius: 50%;
+    left: 10px;
+    background-image: url('../assets/images/volumeON.png');
+    background-size: cover;
+    background-position: center;
+    width: 10vw; /* Ajuste proporcional à largura */
+    height: 10vw;
+    max-width: 80px; /* Limita o tamanho máximo */
+    max-height: 80px;
+}
+#pausarjogo {
+    position: absolute;
+    display: flex;
+    top: 10%;
+    left: 0.5vw;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 8%;
+    min-height: 50px;
+    min-width: 50px;
+}
+
+#desistir {
+    position: fixed;
+    display: block;
+    border-radius: 12%;
+    align-items: center;
+    padding-left: 15px;
+    top: 45%;
+    left: 53vw;
+    width: 10vw;
+    height: 10vw;
+    background-image: url("../assets/images/botao-x.png");
+    background-position: center;
+    background-size: cover;
+    max-width: 90px;
+    max-height: 90px;
+}
+
+#desistir:hover {
+    background-color: rgb(218, 218, 218);
+}
+
+#menuLogin{
+    position: fixed;
+    display: flex;
+    width: 20vw;
+    height: 30vw;
+    background-color: rgb(255, 119, 28);
+    top: 15%;
+    left: 40%;
+    border-radius: 10px;
+    font-size: 3vw;
+}
+#textLogin{
+    display: flex;
+    position: relative;
+    font-size: 3vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    top: -10%;
+    left: 6.5vw;
+    user-select: none;
+}
+#textCadastroMenu{
+    display: flex;
+    position: relative;
+    font-size: 3vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    top: -10%;
+    left: 4vw;
+    user-select: none;
+}
+#menuCadastro{
+    position: fixed;
+    display: flex;
+    width: 20vw;
+    height: 30vw;
+    background-color: rgb(255, 119, 28);
+    top: 15%;
+    left: 40%;
+    border-radius: 10px;
+    font-size: 3vw;
+}
+#textCadastro{
+    position: fixed;
+    display: block;
+    height: 1.5vw;
+    width: 3.5vw;
+    left: 96vw;
+    top: 0.1vw;
+    background-color: rgb(255, 102, 0);
+    color: rgb(255, 255, 255);
+    font-size: 0.8vw;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+#textCadastro:hover{
+    height: 1.7vw;
+    width: 3.5vw;
+    top: 0.3vw;
+    transition: all 0.3s ease;
+}
+#EmailTextLogin{
+    display: flex;
+    position: relative;
+    font-size: 0.8vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    top: 10vw;
+    right: 2vw;
+    user-select: none;
+}
+#usernameTextCadastro{
+    display: flex;
+    position: relative;
+    font-size: 0.8vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    top: 10.2vw;
+    right: 8.5vw;
+    user-select: none;
+}
+
+#passwordText{
+    display: flex;
+    position: relative;
+    font-size: 0.8vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    top: 13.8vw;
+    right: 4.2vw;
+    user-select: none;
+}
+#passwordTextCadastro{
+    display: flex;
+    position: relative;
+    font-size: 0.8vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    top: 13.8vw;
+    right: 11.3vw;
+    user-select: none;
+}
+#PasswordsRules{
+    display: block;
+    position: absolute;
+    background-color: rgb(255, 129, 44);
+    right: 105%;
+    border-radius: 3%;
+    width: 40%;
+    height: 25%;
+}
+#textRules{
+    display: block;
+    position: relative;
+    color: white;
+    font-size: 0.9vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    bottom: 10px;
+    left: 0.4vw;
+}
+#rule1{
+    display: block;
+    position: absolute;
+    color: white;
+    font-size: 0.9vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    top: 1.5vw;
+}
+#rule2{
+    display: block;
+    position: absolute;
+    color: white;
+    font-size: 0.9vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#rule3{
+    display: block;
+    position: absolute;
+    color: white;
+    font-size: 0.9vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    bottom: -10px;
+}
+#rememberMeP{
+    display: flex;
+    position: absolute;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.8vw;
+    bottom: 7.1vw;
+    right: 5vw;
+    color: white;
+    user-select: none;
+}
+#rememberMeCheckbox{
+    display: flex;
+    position: absolute;
+    font-size: 0.1vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    top: 21vw;
+    right: 12vw;
+    height: 1vw;
+    width: 5vw;
+}
+#emailTextCadastro{
+    display: flex;
+    position: relative;
+    font-size: 0.8vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    top: 7vw;
+    right: 6.5vw;
+    user-select: none;
+}
+#EmailEntry{
+    position: absolute;
+    display: flex;
+    background-color: rgb(44, 44, 44);
+    caret-color: rgb(255, 102, 0);
+    width: 10vw;
+    height: 1vw;
+    bottom: 65%;
+    left: 5vw;
+    color: white;
+}
+#EmailEntryLogin{
+    position: absolute;
+    display: flex;
+    background-color: rgb(44, 44, 44);
+    caret-color: rgb(255, 102, 0);
+    width: 10vw;
+    height: 1vw;
+    bottom: 55%;
+    left: 5vw;
+    color: white;
+}
+
+#passwordEntry{
+    position: absolute;
+    display: flex;
+    background-color: rgb(44, 44, 44);
+    caret-color: rgb(255, 102, 0);
+    width: 10vw;
+    height: 1vw;
+    bottom: 43%;
+    left: 5vw;
+    color: white;
+}
+#usernameEntryCadastro{
+    position: absolute;
+    display: flex;
+    background-color: rgb(44, 44, 44);
+    caret-color: rgb(255, 102, 0);
+    width: 10vw;
+    height: 1vw;
+    bottom: 55%;
+    left: 5vw;
+    color: white;
+}
+#passwordEntryCadastro{
+    position: absolute;
+    display: flex;
+    background-color: rgb(44, 44, 44);
+    caret-color: rgb(255, 102, 0);
+    width: 10vw;
+    height: 1vw;
+    bottom: 43%;
+    left: 5vw;
+    color: white;
+}
+
+.StyleText{
+    display: flex;
+    position: fixed;
+    font-size: 0.8vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    top: 25.5vw;
+    right: 49.6vw;
+    user-select: none;
+}
+
+#StyleText_2{
+    display: flex;
+    position: absolute;
+    font-size: 0.8vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    top: 0.5vw;
+    right: 5vw;
+    user-select: none;
+}
+#dashed-line{
+    display: flex;
+    position: relative;
+    font-size: 0.8vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: monospace;
+    letter-spacing: -6px;
+    color: white;
+    top: 18vw;
+    right: 7.3vw;
+    user-select: none;
+}
+
+#LinkCadastro{
+    display: flex;
+    position: relative;
+    font-size: 0.8vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: monospace;
+    color: white;
+    top: 25vw;
+    right: 8.4vw;
+    user-select: none;
+}
+#login{
+    position: fixed;
+    display: block;
+    height: 1.6vw;
+    width: 3vw;
+    left: 90vw;
+    top: 0.8vw;
+    background-color: rgb(255, 102, 0);
+    color: rgb(255, 255, 255);
+    font-size: 1vw;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    min-width: 3.5%;
+    min-height: 2.5%;
+}
+
+#AccountPhoto{
+    position: absolute;
+    display: block;
+    height: 3vw;
+    width: 3vw;
+    left: 95vw;
+    min-height: 60px;
+    min-width: 60px;
+    top: 0.3vw;
+    border-radius: 15vw;
+    background-image: url("../assets/images/account.png");
+    background-position: center;
+    background-size: cover;
+    background-color: rgb(255, 129, 44);
+}
+
+#DropdownMenu{
+    display: flex;
+    position: absolute;
+    height: 100px;
+    width: 80px;
+    background-color: rgb(255, 102, 0);
+    left: 94vw;
+    top: 3.5vw;
+}
+#signOutText{
+    position: relative;
+    display: block;
+    color: white;
+    top: 65px;
+    left: 25px;
+    margin-bottom: 65px;
+}
+
+#signOutText:hover{
+    color: rgb(0, 54, 104);
+}
+
+#login:hover{
+    height: 1.8vw;
+    width: 3.3vw;
+    top: 0.9vw;
+    background-color: rgb(236, 95, 0);
+}
+
+#ContinuarComGoogle{
+    position: absolute;
+    display: flex;
+    height: 2vw;
+    width: 2vw;
+    border-radius: 9%;
+    background-image: url("../assets/images/google.png");
+    background-position: center;
+    background-size: cover;
+    top: 23vw;
+    left: 9vw;
+}
+#CadastrocomGoogle{
+    position: absolute;
+    display: flex;
+    height: 2vw;
+    width: 2vw;
+    border-radius: 9%;
+    background-image: url("../assets/images/google.png");
+    background-position: center;
+    background-size: cover;
+    top: 23vw;
+    left: 9vw;
+}
+#logar{
+    position: absolute;
+    display: flex;
+    height: 1.5vw;
+    width: 12vw;
+    border-radius: 6%;
+    top: 19vw;
+    left: 4vw;
+    font-size: 1vw;
+    color: rgb(236, 95, 0);
+    background-color: rgb(255, 255, 255);
+}
+#logar:hover, #cadastrar-se:hover{
+    background-color: rgb(223, 223, 223);
+}
+#cadastrar-se{
+    position: absolute;
+    display: flex;
+    height: 1.5vw;
+    width: 12vw;
+    border-radius: 6%;
+    top: 19vw;
+    left: 4vw;
+    font-size: 1vw;
+    color: rgb(236, 95, 0);
+    background-color: rgb(255, 255, 255);
+}
+#closeMenuLogin{
+    position: absolute;
+    display: flex;
+    height: 2vw;
+    width: 2vw;
+    border-radius: 9%;
+    background-image: url("../assets/images/botao-x.png");
+    background-position: center;
+    background-size: cover;
+    top: 1vw;
+    left: 17vw;
+}
+#closeMenuCadastro{
+    position: absolute;
+    display: flex;
+    height: 2vw;
+    width: 2vw;
+    border-radius: 9%;
+    background-image: url("../assets/images/botao-x.png");
+    background-position: center;
+    background-size: cover;
+    top: 1vw;
+    left: 17vw;
+}
+#loadingScreen {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(44, 44, 44);
+    color: rgb(255, 102, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    overflow: hidden;
+    user-select: none;
+}
+
+#textAnimation {
+    font-size: 3rem;
+    animation: fadeInOut 3s forwards;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.content {
+    display: none;
+}
+
+#textStatic2 {
+    position: absolute;
+    background-color: rgb(44, 44, 44);
+    width: 100%;
+    height: 9.5%;
+    user-select: none;
+}
+
+#textstatic {
+    position: absolute;
+    font-size: 80px;
+    bottom: 0.1vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    background-color: black;
+    background: linear-gradient(to right, rgb(255, 102, 0) 0%, rgb(255, 166, 0));
+    background-size: 100% 100%;
+    background-clip: border-box;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+}
+
+/* Media Queries para telas menores */
+
+@media (max-width: 720px) {
+    #comboScreen {
+        font-size: 5vw;
+        left: 80%;
+    }
+
+    #tempo {
+        font-size: 6vw;
+        top: 7vh;
+    }
+
+    #iniciar {
+        width: 15vw;
+        height: 15vw;
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    #pausarjogo {
+        width: 9vw;
+        height: 9vw;
+    }
+
+    #desistir {
+        width: 15vw;
+        height: 15vw;
+    }
+}
+
+/* Ajustes para telas pequenas */
+
+@media (max-width: 480px) {
+    #comboScreen {
+        font-size: 6vw;
+        left: 70%;
+    }
+
+    #tempo {
+        font-size: 8vw;
+        top: 10vh;
+    }
+
+    #iniciar {
+        width: 20vw;
+        height: 20vw;
+        max-width: 70px;
+        max-height: 70px;
+    }
+
+    #pausarjogo {
+        width: 12vw;
+        height: 12vw;
+    }
+
+    #desistir {
+        width: 20vw;
+        height: 20vw;
+    }
+}
